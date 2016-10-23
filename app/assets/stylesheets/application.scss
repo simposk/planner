@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// ===*** Variabless ***===
+$grey: #D5D5D5;
+$dark-grey: #7e7e7e;
+$black: #333;
+$white: #fff;
+$green: #B6F2AA;
+$pink: #F5B5B5;
+
+// ===*** Global ***===
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, p, a {
+  padding: 0;
+  margin: 0;
+}
+
+// ===*** Navigation ***===
+.navbar {
+  a {
+    color: $black;
+  }
+  margin: 0;
+}
+
+// ===*** StaticPages#index ***===
+
+.index_wrapper {
+  height: 94.7%;
+  width: 100%;
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .text {
+    color: #fff;
+    text-align: center;
+    padding-top: 25em;
+
+    h1 {
+      font-size: 3.5em;
+      line-height: 1.8em;
+    }
+    h3 {
+      font-size: 2em;
+      line-height: 1.5em;
+    }
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
