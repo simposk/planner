@@ -7,7 +7,7 @@
           <button>New List</button>
         <% end %>
       </div>
-        <% @lists.each do |list| %>
+        <% current_user.lists.each do |list| %>
         <div class="list">
           <div class="row">
             <div class="col-md-8">

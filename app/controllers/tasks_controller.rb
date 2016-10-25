@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
     before_action :set_up_list
     before_action :set_up_task, except: [:create]
+    before_action :authenticate_user!
 
     def create
         # Creates a task on current list

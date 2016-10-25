@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :authorize_user, only: [:show, :edit, :update, :destroy]
 
   # GET /lists
   # GET /lists.json
@@ -24,7 +26,7 @@ class ListsController < ApplicationController
   # POST /lists
   # POST /lists.json
   def create
-    @list = List.new(list_params)
+    @list = current_user.lists.new(list_params)
 
     respond_to do |format|
       if @list.save
@@ -71,4 +73,11 @@ class ListsController < ApplicationController
     def list_params
       params.require(:list).permit(:content)
     end
+
+    def authorize_user
+      unless current_user == @list.user
+      redirect_to lists_path
+      flash["alert"] = "You don't have permission!"
+    end
+  end
 end
