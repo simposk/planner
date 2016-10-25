@@ -266,3 +266,37 @@ h1, h2, h3, h4, h5, p, a {
     }
   }
 }
+
+//===*** Devise forms ***===
+
+.devise {
+  h2 {
+    text-align: center;
+    padding-top: 2em;
+  }
+
+  .field {
+    padding-bottom: 2em;
+    input[type="email"], input[type="password"] {
+      font-size: 1.8em;
+      width: 100%;
+      border: none;
+      border-bottom: 3px solid $grey;
+      color: $dark-grey;
+      outline: none;
+    }
+  }
+  input[type="submit"] {
+    background: $white;
+    border: 2px solid $grey;
+    border-radius: 15px;
+    color: $dark-grey;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+  a {
+    color: $dark-grey;
+  }
+}
