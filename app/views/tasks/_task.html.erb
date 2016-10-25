@@ -1,0 +1,32 @@
+<div class="task">
+  <div class="row">
+    <div class="col-md-8">
+      <% if task.completed? %>
+        <div class="completed"><h3><%= task.content %></h3></div>
+      <% else %>
+        <h3><%= task.content %></h3>
+      <% end %>
+    </div>
+
+    <div class="col-md-4">
+      <div class="buttons">
+        <ul>
+          <% unless task.completed? %>
+            <li>
+              <%= link_to complete_list_task_path(@list, task.id), method: :patch do %>
+                <i class="fa fa-check" aria-hidden="true"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <li>
+            <div class="delete">
+              <%= link_to list_task_path(@list, task.id), method: :delete do %>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

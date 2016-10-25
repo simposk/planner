@@ -1,0 +1,30 @@
+<div class="lists_wrapper">
+  <div id="hero" class="container">
+    <div class="lists">
+      <h1>Your lists: </h1>
+      <div id="button">
+        <%= link_to new_list_path  do %>
+          <button>New List</button>
+        <% end %>
+      </div>
+        <% @lists.each do |list| %>
+        <div class="list">
+          <div class="row">
+            <div class="col-md-8">
+              <h2><%= link_to list.content, list %></h2>
+            </div>
+            <div class="col-md-4">
+              <div class="buttons">
+                <!-- <%= link_to 'Edit', edit_list_path(list) %> -->
+                <%= link_to list, method: :delete,
+                data: { confirm: 'Are you sure?' } do  %>
+                  <i class="fa fa-remove fa-2x" aria-hidden="true"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>

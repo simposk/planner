@@ -1,0 +1,21 @@
+<div class="lists_show_wrapper">
+  <div class="container">
+    <div class="title">
+      <h1>
+        <%= @list.content %>
+        <hr>
+      </h1>
+    </div>
+
+    <div class="tasks"><%= render @list.tasks %></div>
+    <br>
+    <div id="form">
+      <%= render "tasks/form" %>
+    </div>
+
+    <div id="links">
+      <%= link_to 'Delete', list_path(@list), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to 'Back', lists_path %>
+    </div>
+  </div>
+</div>
