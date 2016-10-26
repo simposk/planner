@@ -300,3 +300,18 @@ h1, h2, h3, h4, h5, p, a {
     color: $dark-grey;
   }
 }
+
+//===*** Alerts & Notices***===
+#alert {
+  color: red;
+  text-align: center;
+  padding: 1em 0;
+  background: $pink;
+}
+
+#notice {
+  color: green;
+  text-align: center;
+  padding: 1em 0;
+  background: $green;
+}
